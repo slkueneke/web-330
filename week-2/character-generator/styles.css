@@ -3,9 +3,100 @@
   Chapter 1
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Shannon Kueneke
+  Date: October 25, 2025
+  Filename: styles.css
 */
 
 /* Your CSS goes here */
+.hide {
+  display: none;
+}
+
+body {
+  height:100vh;
+  background-color: #626737;
+}
+
+#mainContainer {
+  width:fit-content;
+  margin:0 auto;
+  min-height:70%;
+  background-image: url(images/mmorpgBg.png);
+  background-size: cover;
+  padding:3em 8em;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 15px;
+  box-shadow: #4e3932 4px 4px 12px;
+}
+
+label,
+select,
+input,
+button,
+p {
+  font-size: 1.5em;
+  font-family: Arial, sans-serif;
+  display: block;
+  text-align: center;
+}
+
+input,
+select,
+button {
+  border: none;
+  border-radius: 7px;
+  margin: 0 auto;
+}
+
+input,
+select {
+  margin-bottom: 0.5em;
+  width:100%;
+  box-shadow:black 4px 4px 12px;
+}
+
+label,
+p {
+  color:#fff;
+}
+
+button {
+  background-color: #f4a20f;
+  padding: 0.3em 0.5em;
+  color: #332905;
+}
+
+button:disabled {
+  background-color:#bcbcbc;
+  color:#9a9999;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #f8e64a;
+}
+
+button:disabled:hover {
+  cursor:auto;
+  background-color: #bcbcbc;
+}
+
+/*#characterOutput {
+  position: absolute;
+  top:0;
+  left: 50%;
+  transform: translateX(-50%);
+}*/
+#characterOutput img {
+  height:400px;
+  margin: 0 auto;
+  display: block;
+}
+
+#characterOutput p {
+  margin-bottom: 0;
+}
+
