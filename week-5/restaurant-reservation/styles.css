@@ -3,9 +3,55 @@
   Chapter 2
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Shannon Kueneke
+  Date: November 17, 2025
+  Filename: styles.css
 */
 
 /* Add your CSS styles here */
+#reservationForm {
+  margin: 0 auto;
+  width: fit-content;
+  background: #f5fffa;
+  padding: 1em 2em;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #575d60;
+}
+
+h1 {
+  font-family: cursive;
+  text-align: center;
+  margin-top:0;
+}
+
+label {
+  font-size: 1.5em;
+  vertical-align: bottom;
+}
+
+input[type="submit"] {
+  border: none;
+  background: salmon;
+  border-radius: 10px;
+  padding: 0.7em 1.5em;
+  font-size: 1em;
+  margin: 0 auto;
+  display: block;
+  margin-top: 1em;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color:#E55E4D;
+}
+
+#name,
+#tableNumber {
+  padding:0.2em;
+  font-size: 1em;
+}
+
+#message {
+  text-align: center;
+  font-family: sans-serif;
+}
