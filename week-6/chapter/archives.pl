@@ -1,15 +1,17 @@
-#!"D:\xampp\perl\bin\perl.exe"
+#!/usr/bin/perl
 
 # Confirm that perl is located in the usr/bin/perl folder on the server
 
 #All perl scripts should use strict
 use strict;
-
+use warnings;
 use CGI;
 my $cgi_object = new CGI();
 
 # Print out the http header 
-print $cgi_object->header();
+print $cgi_object->header('text/html');
+
+
 
 # Retrieve the value of the skey parameter 
 my $input = $cgi_object->param('skey');
@@ -149,3 +151,4 @@ foreach my $row (@articles) {
 if ($count == 0) {
    print "<h1>No Articles Found</h1><p>Come back again, we're still setting up our database!</p>";
 }
+
