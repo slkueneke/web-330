@@ -1,33 +1,91 @@
 /*
   Pragmatic JavaScript
   Chapter 3
-  Programming Assignment
+  Programming Assignments
 
-  Author:
-  Date:
+  Author: Shannon Kueneke
+  Date: December 3, 2025
   Filename: chefs.js
 */
 
-"use strict";
+'use strict';
 
 // TODO: Define an array of chef objects
 let chefs = [
   // Each chef object should have a name, specialty, weakness, and restaurantLocation
+  {
+    chefName: 'Bob',
+    specialty: 'Sauces',
+    weakness: 'Desserts',
+    restaurantLocation: 'Paris, France',
+  },
+  {
+    chefName: 'June',
+    specialty: 'BBQ',
+    weakness: 'Vegetarian',
+    restaurantLocation: 'St. Louis, MO, USA',
+  },
+  {
+    chefName: 'Kevin',
+    specialty: 'Pizza',
+    weakness: 'Asian Cuisine',
+    restaurantLocation: 'Florence, Italy',
+  },
 ];
 
-// TODO: Define a function to retrieve the first chef's information
+  // These functions should return a promise that resolves with the chef's information after a delay
 function retrieveChef1() {
-  // This function should return a promise that resolves with the chef's information after a delay
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(chefs[0]);
+    }, 2000);
+  });
 }
 
-// TODO: Define a function to retrieve the second chef's information
 function retrieveChef2() {
-  // This function should return a promise that resolves with the chef's information after a delay
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(chefs[1]);
+    }, 3000);
+  });
 }
 
-// TODO: Define a function to retrieve the third chef's information
 function retrieveChef3() {
-  // This function should return a promise that resolves with the chef's information after a delay
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(chefs[2]);
+      //reject("Chef details unable to be retrieved");
+    }, 4000);
+  });
 }
 
-// TODO: Use Promise.allSettled to retrieve all chefs' information and update the webpage accordingly
+
+
+Promise.allSettled([retrieveChef1(), retrieveChef2(), retrieveChef3()]).then(
+  (results) => {
+    let chefNum = 1;
+    results.forEach((result) => {
+      if (result.status === 'fulfilled') {
+        console.log(result.value);
+        populateData(result.value, chefNum);
+        chefNum++;
+      } else {
+        console.log('An error occurred:', result.reason);
+        let thisError = document.querySelector('#chef' + chefNum + ' .error p');
+        thisError.textContent = "ERROR: " + result.reason;
+        chefNum++;
+
+      }
+    });
+  }
+);
+
+function populateData(chefObj, chefNumber) {
+  let thisChef = document.querySelector("#chef" + chefNumber);
+  let chefData = chefObj;
+
+  for (let key in chefData) {
+    let elBuilder = thisChef.querySelector("." + key + " span");
+    elBuilder.textContent = chefData[key];
+  }
+}
