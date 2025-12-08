@@ -6,25 +6,36 @@
       Chapter 4
       Programming Assignment
 
-      Author:
-      Date:
-      Filename:
+      Author: Shannon Kueneke
+      Date: December 8, 2025
+      Filename: index.html
     -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
-    <div class="form-container">
+    <div class="form-container centered">
+      <img id="logo" class="centered" src="images/moviedblogo.png" alt="Movie Database logo" />
+      <h1>Movie Database</h1>
+      <p>Enter a movie title below to retrieve movie information.</p>
       <form id="movie-form">
         <input type="text" id="title-input" placeholder="Enter movie title" />
         <button type="submit">Search</button>
       </form>
       <div id="movie-info">
-        <h2 id="movie-title"></h2>
-        <p id="movie-director"></p>
-        <p id="movie-year"></p>
-        <p id="movie-synopsis"></p>
+        <div>
+          <div id="movie-poster">
+            <!--display movie poster here-->
+          </div>
+        </div>
+        <div>
+          <h2 id="movie-title"></h2>
+          <p id="movie-director"></p>
+          <p id="movie-year"></p>
+          <p id="movie-synopsis"></p>
+        </div>
       </div>
       <p id="error-message"></p>
+      <p id="hint"><strong>Hint</strong><br>Movie options to choose from are:<br> <em>The Consolefather<br> Pulp Function<br> The Lord of the Strings<br>No Country for Old Syntax<br>When Harry Met JSON.</em></p>
     </div>
     <script src="script.js"></script>
   </body>

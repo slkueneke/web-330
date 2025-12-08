@@ -3,9 +3,94 @@
   Chapter 4
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Shannon Kueneke
+  Date: December 8, 2025
+  Filename: styles.css
 */
 
 /* Add your styles here */
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  font-size:2.5em;
+}
+
+h2,
+p,
+button,
+input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+.form-container {
+  width:80%;
+}
+
+.form-container > p {
+  text-align: center;
+}
+
+#logo {
+  width: 10em;
+}
+
+.centered {
+  margin:0 auto;
+  display: block;
+}
+
+#movie-form {
+  text-align: center;
+}
+
+#title-input,
+button {
+  display: inline-block;
+  font-size:1.3em;
+  padding:0.2em 0.4em;
+}
+
+button {
+  background-color: #000;
+  color:#fff;
+  border:1px solid #000;
+  border-radius: 5px;
+
+}
+
+button:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+
+#movie-info {
+  margin-top:10em;
+}
+#hint {
+  font-size:1em;
+  margin-top:10em;
+}
+
+#movie-poster img {
+  width:225px;
+  display: block;
+  margin:0 auto;
+}
+
+#movie-info  {
+  display: flex;
+  justify-content: center;
+}
+
+#movie-info > div:last-child {
+  margin-left: 3em;
+}
+
+#movie-synopsis {
+  max-width: 700px;
+}
+
